@@ -7,6 +7,7 @@ import Root from "./routes/root";
 import Errors from "./pages/Errors";
 import Home from "./pages/Home";
 import Create from "./pages/Create";
+import TransactionDetails from "./pages/TransactionDetails";
 
 const router = createBrowserRouter([
   {
@@ -21,6 +22,10 @@ const router = createBrowserRouter([
       {
         path: "/create",
         element: <Create />,
+      },
+      {
+        path: "/transaction/:id",
+        element: <TransactionDetails />,
       },
     ],
   },

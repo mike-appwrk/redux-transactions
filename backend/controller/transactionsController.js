@@ -13,7 +13,13 @@ export const createTransaction = async (req, res) => {
     description, type, amount, date
   });
   await newTransaction.save();
-  console.log(newTransaction)
   res.status(201);
   res.json(newTransaction);
+}
+
+export const getTransaction = async (req, res) => {
+  const { id } = req.params;
+  const transaction = await Transaction.findById(id);
+  res.status(200);
+  res.json(transaction);
 }

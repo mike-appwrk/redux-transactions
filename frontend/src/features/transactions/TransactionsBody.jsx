@@ -1,9 +1,11 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { dateFormatter } from "../../lib/helpers";
 import { selectTransactions } from "./transactionsSlice";
 
 const TransactionsBody = () => {
+
+  const navigate = useNavigate();
 
   const transactions = useSelector(selectTransactions); 
   const transactionsReversed = [...transactions].reverse();
@@ -11,7 +13,9 @@ const TransactionsBody = () => {
   return (
       <tbody>
         {transactionsReversed.map((transaction, index) => (
-          <tr id={transaction._id} key={`${transaction._id}-${index}`} className="odd:bg-white even:bg-primary-400 cursor-pointer" onClick={() => navigate(`/transaction/${id}`)}>
+          <tr id={transaction._id} key={`${transaction._id}-${index}`} className="odd:bg-white even:bg-primary-400 cursor-pointer" 
+            onClick={() => navigate(`/transaction/${transaction._id}`)}
+          >
             <td className="pr-16 pl-8 py-4 capitalize">{transaction?.description}</td>
             <td className="pr-16 pl-8 py-4 capitalize">{dateFormatter(transaction?.date)}</td>
             <td className="pr-16 pl-8 py-4 capitalize">{transaction.type === 'credit' ? transaction.amount : '-'}</td>

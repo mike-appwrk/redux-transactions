@@ -44,4 +44,6 @@ const transactionsReducer = transactionsSlice.reducer;
 
 export default transactionsReducer;
 
-export const selectTransactions = state => state.transactions.transactions
+export const selectTransactions = state => state.transactions.transactions;
+
+export const selectTransactionById = (state, id) => state.transactions.transactions.find(transaction => transaction._id === id);

@@ -9,3 +9,7 @@ export const createTransaction = (transaction) => fetch(`${url}/create`, {
   },
   body: JSON.stringify(transaction),
 });
+
+export const getTransaction = (id) => fetch(`${url}/${id}`);
+
+
