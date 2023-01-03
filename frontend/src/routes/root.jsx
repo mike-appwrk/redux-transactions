@@ -1,17 +1,21 @@
 import { useEffect } from "react";
 import { Outlet } from "react-router-dom";
+import Main from "../components/Main";
+import Sidebar from "../components/Sidebar/Sidebar";
 
-const Root = () => {
+export default function Root() {
+
   useEffect(() => {
-    document.title = 'Transactions | Redux';
+    document.title = 'Transaction Management System';
   }, []);
 
   return (
-    <div>
-      Root
-      <Outlet />
-    </div>
-  )
+    <div className="grid grid-cols-ui">
+      <Sidebar />
+      <Main>
+        <Outlet />
+      </Main>
+    </div> 
+    
+  );
 }
-
-export default Root;

@@ -1,8 +1,9 @@
+import TransactionsTable from "../components/TransactionsTable";
+
 const Home = () => {
+
   return (
-    <div>
-      Home
-    </div>
+    <TransactionsTable/>
   )
 }
 

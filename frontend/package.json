@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Redux Transactions UI",
   "main": "index.js",
+  "proxy": "http://localhost:7676/",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -15,16 +16,24 @@
   "license": "ISC",
   "devDependencies": {
     "@vitejs/plugin-react": "^2.1.0",
+    "autoprefixer": "^10.4.13",
     "eslint": "^8.24.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-jsx-a11y": "^6.6.1",
     "eslint-plugin-react": "^7.31.8",
+    "postcss": "^8.4.20",
+    "tailwindcss": "^3.2.4",
     "vite": "^3.1.4"
   },
   "dependencies": {
+    "@reduxjs/toolkit": "^1.9.1",
+    "moment": "^2.29.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-router-dom": "^6.6.1"
+    "react-redux": "^8.0.5",
+    "react-router-dom": "^6.6.1",
+    "redux": "^4.2.0",
+    "redux-thunk": "^2.4.2"
   }
 }
