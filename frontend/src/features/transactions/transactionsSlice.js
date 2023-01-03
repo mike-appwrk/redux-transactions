@@ -17,11 +17,14 @@ const transactionsSlice = createSlice({
   name: 'transactions',
   initialState,
   reducers: {
-    
+    transactionCreated(state, action) {
+      console.log({ state });
+      state.transactions.push(action.payload);
+    }
   },
   extraReducers(builder) {
     builder 
-      .addCase(getTransactions.pending, (state, action) => {
+      .addCase(getTransactions.pending, (state) => {
         state.status = 'loading'
       })
       .addCase(getTransactions.fulfilled, (state, action) => {
@@ -34,6 +37,8 @@ const transactionsSlice = createSlice({
       })
   }
 });
+
+export const { transactionCreated } = transactionsSlice.actions;
 
 const transactionsReducer = transactionsSlice.reducer;
 

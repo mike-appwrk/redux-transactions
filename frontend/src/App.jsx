@@ -6,6 +6,7 @@ import store from "./app/store";
 import Root from "./routes/root";
 import Errors from "./pages/Errors";
 import Home from "./pages/Home";
+import Create from "./pages/Create";
 
 const router = createBrowserRouter([
   {
@@ -16,7 +17,11 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home />
-      }
+      },
+      {
+        path: "/create",
+        element: <Create />,
+      },
     ],
   },
 ]);
