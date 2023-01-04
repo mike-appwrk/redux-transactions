@@ -8,6 +8,9 @@ import Errors from "./pages/Errors";
 import Home from "./pages/Home";
 import Create from "./pages/Create";
 import TransactionDetails from "./pages/TransactionDetails";
+import EditTransaction from "./pages/EditTransaction";
+import Delete from "./pages/Delete";
+import Dashboard from "./pages/Dashboard";
 
 const router = createBrowserRouter([
   {
@@ -20,13 +23,26 @@ const router = createBrowserRouter([
         element: <Home />
       },
       {
+        path: "/dashboard",
+        element: <Dashboard />
+      },
+      {
         path: "/create",
         element: <Create />,
       },
       {
-        path: "/transaction/:id",
+        path: "/transactions/:id",
         element: <TransactionDetails />,
       },
+      {
+        path: "/transactions/edit/:id",
+        element: <EditTransaction />,
+      },
+      {
+        path: "/transactions/delete/:id",
+        element: <Delete />,
+      },
+
     ],
   },
 ]);

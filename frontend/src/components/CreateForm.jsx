@@ -9,7 +9,7 @@ import { createTransaction } from "../api";
 import { transactionCreated } from "../features/transactions/transactionsSlice";
 import { useDispatch } from "react-redux";
 
-function CreateForm () {
+const CreateForm = () => {
 
   const dispatch = useDispatch();
 
