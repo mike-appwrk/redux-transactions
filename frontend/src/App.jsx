@@ -11,6 +11,7 @@ import TransactionDetails from "./pages/TransactionDetails";
 import EditTransaction from "./pages/EditTransaction";
 import Delete from "./pages/Delete";
 import Dashboard from "./pages/Dashboard";
+import DataTables from "./pages/DataTables";
 
 const router = createBrowserRouter([
   {
@@ -25,6 +26,10 @@ const router = createBrowserRouter([
       {
         path: "/dashboard",
         element: <Dashboard />
+      },
+      {
+        path: "/data-tables",
+        element: <DataTables />
       },
       {
         path: "/create",

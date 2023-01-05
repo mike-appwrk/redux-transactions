@@ -28,6 +28,11 @@ const transactionsSlice = createSlice({
     transactionDeleted(state, action) {
       console.log('Deletion!')
       state.transactions = [...state.transactions.filter((item) => item._id !== action.payload)];
+    },
+
+    multipleTransactionsDeleted(state, action) {
+      console.log('Deletion!');   
+      state.transactions = [...state.transactions.filter((item) => !action.payload.includes(item._id))];
     }
   },
   extraReducers(builder) {
@@ -46,7 +51,7 @@ const transactionsSlice = createSlice({
   }
 });
 
-export const { transactionCreated, transactionUpdated, transactionDeleted } = transactionsSlice.actions;
+export const { transactionCreated, transactionUpdated, transactionDeleted, multipleTransactionsDeleted } = transactionsSlice.actions;
 
 const transactionsReducer = transactionsSlice.reducer;
 

@@ -68,3 +68,21 @@ export const deleteTransaction = async (req, res) => {
   }
 
 }
+
+export const deleteMultipleTransactions = async (req, res) => {
+  const { ids: idsStrings } = req.query;
+  const ids = idsStrings.split(',')
+  console.log({ ids });
+
+  // if (!mongoose.Types.ObjectId.isValid(id)) return res.status(404).send(`No transaction with id: ${id}`);
+  
+  try {
+    const response = await Transaction.deleteMany({ _id: { $in: ids }});
+    res.status(200);
+    res.json(response);
+  } catch (error) {
+    res.status(409);
+    console.log({ message: error.message });
+  }
+
+}

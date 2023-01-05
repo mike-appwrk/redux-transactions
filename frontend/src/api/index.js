@@ -21,3 +21,5 @@ export const updateTransaction = (transaction, id) => fetch(`${url}/update/${id}
 })
 
 export const deleteTransaction = (id) => fetch(`${url}/delete/${id}`,  { method: 'DELETE' });
+
+export const deleteMultipleTransactions = (ids) => fetch(`${url}/delete/?ids=${ids}`, { method: 'DELETE' });

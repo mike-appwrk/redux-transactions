@@ -17,6 +17,11 @@ const navLinks = [
     title: 'Create',
     url: '/create',
     icon: create
+  },
+  { 
+    title: 'Data Tables',
+    url: '/data-tables',
+    icon: create
   }
 ]
 
